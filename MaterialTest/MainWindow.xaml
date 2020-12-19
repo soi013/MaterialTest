@@ -1,0 +1,74 @@
+﻿<Window
+   x:Class="MaterialTest.MainWindow"
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+   xmlns:local="clr-namespace:MaterialTest"
+   xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+   Title="MainWindow"
+   Width="800"
+   Height="450"
+   Background="{DynamicResource MaterialDesignPaper}"
+   TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+   mc:Ignorable="d">
+   <ScrollViewer>
+      <StackPanel HorizontalAlignment="Center">
+         <TextBox
+            Margin="10"
+            materialDesign:HintAssist.Hint="敷地面積"
+            materialDesign:TextFieldAssist.HasClearButton="True"
+            materialDesign:TextFieldAssist.PrefixText="東京ドーム "
+            materialDesign:TextFieldAssist.SuffixText="個分"
+            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+            Text="10" />
+         <StackPanel Orientation="Horizontal">
+            <CheckBox
+               Margin="10"
+               Content="べんとう"
+               Style="{StaticResource MaterialDesignFilterChipPrimaryCheckBox}" />
+            <CheckBox
+               Margin="10"
+               Content="すいとう"
+               Style="{StaticResource MaterialDesignFilterChipAccentOutlineCheckBox}" />
+            <CheckBox
+               Margin="10"
+               Content="かさ"
+               Style="{StaticResource MaterialDesignFilterChipAccentCheckBox}" />
+         </StackPanel>
+         <TabControl
+            Margin="10"
+            materialDesign:ColorZoneAssist.Mode="PrimaryMid"
+            Style="{StaticResource MaterialDesignNavigatilRailTabControl}">
+            <TabControl.Resources>
+               <Style BasedOn="{StaticResource MaterialDesignNavigationRailTabItem}" TargetType="TabItem" />
+            </TabControl.Resources>
+            <materialDesign:NavigationRailAssist.FloatingContent>
+               <Button
+                  Margin="5"
+                  Content="{materialDesign:PackIcon Kind=ArrowExpandLeft}"
+                  Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" />
+            </materialDesign:NavigationRailAssist.FloatingContent>
+            <TabItem Header="{materialDesign:PackIcon Kind=Files}">
+               <TextBlock Text="TAB1" />
+            </TabItem>
+            <TabItem Header="{materialDesign:PackIcon Kind=Search}">
+               <TextBlock Text="TAB2" />
+            </TabItem>
+            <TabItem Header="{materialDesign:PackIcon Kind=Puzzle}">
+               <TextBlock Text="TAB3" />
+            </TabItem>
+         </TabControl>
+         <DatePicker
+            Width="120"
+            Height="600"
+            materialDesign:HintAssist.Hint="アドベントカレンダー"
+            DisplayDate="12/21/2020"
+            Language="ja-JP" />
+         <TextBox
+            Margin="100"
+            Text="寿限無(じゅげむ)　寿限無(じゅげむ)　五劫(ごこう)のすりきれ　海砂利(かいじゃり)水魚(すいぎょ)の水行末(すいぎょうまつ) 雲来末(うんらいまつ) 風来末(ふうらいまつ)　食(く)う寝(ね)るところに　住(す)むところ　やぶらこうじの　ぶらこうじ　パイポ　パイポ　パイポの　シューリンガン　シューリンガンの　グーリンダイ　グーリンダイの　ポンポコピーのポンポコナの　長久命(ちょうきゅうめい)の長助(ちょうすけ)"
+            TextWrapping="Wrap" />
+      </StackPanel>
+   </ScrollViewer>
+</Window>
